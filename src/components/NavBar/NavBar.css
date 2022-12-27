@@ -1,0 +1,10 @@
+.ContenedorNavBar {
+    background-color: gray;
+    height: 40px;
+}
+
+.ListaNavBar {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10px;
+}
