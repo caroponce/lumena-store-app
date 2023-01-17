@@ -1,0 +1,15 @@
+.item-name {
+    font-size: 25px;
+}
+
+.item-img {
+    width: 40%;
+height: auto;
+}
+
+.item-link {
+    text-decoration: none;
+    color: black;
+    border: 1px black solid;
+}
+

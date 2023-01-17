@@ -1,0 +1,17 @@
+.sumar {
+    height: 17%;
+    width: 4%;
+}
+
+.restar {
+    height: 17%;
+    width: 4%;
+}
+
+.count-item {
+    margin-bottom: 30px;
+    border: 1px black solid;
+    width: 10%;
+    margin-left: auto;
+    margin-right: auto;
+}
