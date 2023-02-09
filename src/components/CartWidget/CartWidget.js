@@ -1,10 +1,13 @@
-const CartWidget = () => {
+import './CartWidget.css'
+import { Link } from 'react-router-dom';
+const CartWidget = ({ quant }) => {
     return (
-        <div>
-            <img src='./images/cart.svg' alt='cart-widget'/>
-            0
-        </div>
+        <Link to='/cart'>
+            { <img  src='./images/cart.svg' alt='cart-widget'/> }
+            {quant}
+        
+        </Link>
     )
 }
 
-export default CartWidget
+export default CartWidget;

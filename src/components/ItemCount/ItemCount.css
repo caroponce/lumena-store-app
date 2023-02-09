@@ -8,10 +8,14 @@
     width: 4%;
 }
 
+.agregar {
+    height: 17%;
+    width: auto;
+}
 .count-item {
     margin-bottom: 30px;
     border: 1px black solid;
-    width: 10%;
+    width: 4%;
     margin-left: auto;
     margin-right: auto;
 }
