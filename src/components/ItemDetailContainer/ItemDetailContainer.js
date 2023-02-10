@@ -9,22 +9,16 @@ const ItemDetailContainer = () => {
     const [product, setProduct] = useState({})
     const {productId } = useParams()
 
-    useEffect(() => {
-        (async () => {
-            const productRef = doc(db, 'products', productId)
+    
+useEffect(() => {
+    const docRef = doc(db, "products", productId)
+    getDoc(docRef)
+        .then((doc) => {
+            setProduct( {id: doc.id, ...doc.data()} )
+        })
 
-            try {
-                const snapshot = await getDoc(productRef)
-    
-                const fields = snapshot.data()
-                const productAdapted = { id: snapshot.id, ...fields}
-    
-                setProduct(productAdapted)
-            } catch (error) {
-                console.log(error)
-            } 
-        })()
-    }, [productId])
+}, [productId])
+
 
     return (
         <div>
@@ -32,5 +26,6 @@ const ItemDetailContainer = () => {
         </div>
     )
 }
+
 
 export default ItemDetailContainer

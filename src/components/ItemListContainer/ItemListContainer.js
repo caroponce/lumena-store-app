@@ -2,7 +2,7 @@ import { useState,  useEffect } from "react";
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
 import './ItemListContainer.css'
-import { getDocs, collection } from "firebase/firestore";
+import { getDocs, collection, query, where } from "firebase/firestore";
 import { db } from "../../servise/firebase/firebaseConfig";
 
 const ItemListContainer = ({greeting}) => {
@@ -11,27 +11,26 @@ const ItemListContainer = ({greeting}) => {
     const {categoryId} = useParams()
 
 
-    useEffect(() => {
-        (async() => {
-            setLoading(true)
-        const productsRef = collection(db, 'products')
-
-        try {
-            const snapshot = await getDocs(productsRef)
-            const productosAdaptados = snapshot.docs.map(doc=> {
-                const fields = doc.data()
-                return {id: doc.id, ...fields}
+useEffect(() => {
+    setLoading(true)
+    
+    const productosRef = collection(db, "products")
+    const q = categoryId ? query(productosRef, where("category", "==", categoryId)) : productosRef
+    getDocs(q)
+        .then((resp) => {
+            const newProd = resp.docs.map((doc) => {
+                return {
+                    id: doc.id,
+                    ...doc.data()
+                }
             })
-            setProducts(productosAdaptados)
-        } catch (error){
-            console.log(error)
-        } finally {
+            setProducts( newProd )
+        })
+        .finally(() => {
             setLoading(false)
-        }
-       
-        })()
-
-    }, [categoryId])
+        })
+    
+}, [categoryId])
 
     if(loading) {
         return <h1> Buscando los productos </h1>

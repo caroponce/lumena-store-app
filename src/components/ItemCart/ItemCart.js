@@ -7,6 +7,7 @@ const ItemCart = ( {name, count, price, id} ) => {
     const { eliminarProducto } = useContext(CartContext)
 
     return (
+        
         <div className="item-cart">
             <h2> {name} </h2>
             <h2> cantidad {count} </h2>
@@ -14,6 +15,7 @@ const ItemCart = ( {name, count, price, id} ) => {
             <h2> Sub total $ {price * count}</h2>
             <button onClick={ () => eliminarProducto(id)}> X </button>
         </div>
+        
     )
 }
 
