@@ -2,6 +2,7 @@ import { addDoc, getDocs, writeBatch, query, collection, where, documentId } fro
 import { useContext, useState } from "react"
 import { CartContext } from "../../context/CartContext"
 import { db } from "../../servise/firebase/firebaseConfig"
+import './Checkout.css'
 
 const Checkout = () => {
 
@@ -79,10 +80,10 @@ const Checkout = () => {
     if (orderId) {
         return (
             <div>
-                <h4> Gracias por tu compra</h4>
+                <h4 className="mes-agra"> Gracias por tu compra</h4>
                 <div>
                     <div >
-                        <h5>Tu numero de seguimiento es: {orderId}</h5>
+                        <h5 className="nro-segui">Tu numero de seguimiento es: {orderId}</h5>
                     </div>
                 </div>
                 <div>
@@ -115,7 +116,7 @@ const Checkout = () => {
 
     return (
         <div>
-            <h3>Completá los datos para realizar la compra</h3>
+            <h3 className="mensj-checkout">Completá los datos para realizar la compra</h3>
             <div>
             <form>
                 <div>
@@ -130,8 +131,8 @@ const Checkout = () => {
                 <div>
                     <input type="email" value={email2} placeholder="Repetir E-mail" onChange={(e) => setEmail2(e.target.value)} required />
                 </div>
-                <button onClick={handleSubmit} type="submit">Finalizar Compra</button>
-                <button onClick={vaciarCarrito}> Cancelar Compra </button>
+                <button className="botton" onClick={handleSubmit} type="submit">Finalizar Compra</button>
+                <button className="botton" onClick={vaciarCarrito}> Cancelar Compra </button>
                 </form>
             </div>
 

@@ -9,6 +9,7 @@ const ItemCart = ( {name, count, price, id} ) => {
     return (
         
         <div className="item-cart">
+            
             <h2> {name} </h2>
             <h2> cantidad {count} </h2>
             <h2> $ {price} </h2>
