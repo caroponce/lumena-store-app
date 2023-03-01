@@ -2,9 +2,9 @@ import Item from "../Item/Item";
 
 const ItemList = ({products}) => {
     return(
-        <div     style={{
+        <div  style={{
             display: 'flex',
-            justifyContent: 'space-between',
+            justifyContent: 'space-around',
             alignItems: 'center',
             flexWrap: 'wrap',}}
              >    

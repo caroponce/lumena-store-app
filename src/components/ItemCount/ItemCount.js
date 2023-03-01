@@ -1,7 +1,7 @@
 import { useState } from "react"
-import './ItemCount.css'
+import './ItemCount.css' 
 
-const ItemCount = ({initial = 1, stock}) => {
+const ItemCount = ({initial = 1, stock, onAdd}) => {
 
     const [count, setCount] = useState(initial)
     const restar = () => {
@@ -18,10 +18,10 @@ const ItemCount = ({initial = 1, stock}) => {
         <div className="cont-count-item">
             <p className="count-item"> {count} </p>
             <button onClick={restar} className="restar"> - </button>
-            <button> Agregar </button>      
+            <button className="agregar" onClick={() => onAdd(count) } > Agregar </button>      
             <button onClick={sumar} className="sumar">  +  </button>
         </div>
     )
 }
 
-export default ItemCount
+export default ItemCount;

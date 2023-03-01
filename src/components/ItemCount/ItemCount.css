@@ -1,17 +1,21 @@
 .sumar {
-    height: 17%;
+    height: 25%;
     width: 4%;
 }
 
 .restar {
-    height: 17%;
+    height: 25%;
     width: 4%;
 }
 
+.agregar {
+    height: 25%;
+    width: auto;
+}
 .count-item {
     margin-bottom: 30px;
     border: 1px black solid;
-    width: 10%;
+    width: 4%;
     margin-left: auto;
     margin-right: auto;
 }
